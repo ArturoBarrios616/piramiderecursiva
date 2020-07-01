@@ -1,0 +1,45 @@
+#include <iostream> 
+using namespace std; 
+  
+
+void space(int sp) 
+{ 
+    //caso base
+    if (sp == 0) 
+        return; 
+    cout << " "; 
+  
+    
+    space(sp - 1); 
+} 
+  
+void ast(int astk) 
+{ 
+    // caso base 
+    if (astk == 0) 
+        return; 
+    cout << "* ";  
+    ast(astk - 1); 
+} 
+  
+
+void pyramid(int n, int num) 
+{ 
+  //caso base
+    if (n == 0) 
+        return; 
+    space(n - 1); 
+    ast(num - n + 1); 
+    cout << endl; 
+  
+    pyramid(n - 1, num); 
+} 
+  
+int main() 
+{ 
+	int n;
+	cout<<"Introduce el numero de lineas: ";
+    cin>>n; 
+    pyramid(n, n); 
+    return 0; 
+} 
